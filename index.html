@@ -52,10 +52,45 @@
         </div>
     </section>
     <section class="ofert container">
-        <img src="/images/ofert-1.jpg" alt="">
-        <img src="/images/ofert-2.jpg" alt="">
-        <img src="/images/ofert-3.jpg" alt="">
+        <img src="/images/ofert-1.jpg" alt="" onclick="openModal('/images/ofert-1.jpg')">
+        <img src="/images/ofert-2.jpg" alt="" onclick="openModal('/images/ofert-2.jpg')">
+        <img src="/images/ofert-3.jpg" alt="" onclick="openModal('/images/ofert-3.jpg')">
     </section>
+    
+    <!-- El Modal -->
+    <div id="myModal" class="modal">
+      <!-- Contenido del Modal -->
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImage" src="" alt="">
+      </div>
+    </div>
+    
+    <script>
+   
+    var modal = document.getElementById("myModal");
+    
+   
+    var modalImg = document.getElementById("modalImage");
+    
+   
+    function openModal(imageSrc) {
+        modal.style.display = "block";
+        modalImg.src = imageSrc;
+    }
+    
+    
+    function closeModal() {
+        modal.style.display = "none";
+    }
+    
+    
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
     <main class="product container">
         <span class="oferta">Ofertas</span>
         <h2>variedades</h2>
